@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b91c1c">
+  <title>Patient Help | Blood Saathi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7f7;
+      color: #292929;
+    }
+    header {
+      background: #b91c1c;
+      color: white;
+      text-align: center;
+      padding: 22px 14px;
+    }
+    header h1 { margin: 0 0 8px; }
+    header p { margin: 0; }
+    main {
+      max-width: 650px;
+      margin: 22px auto;
+      padding: 0 14px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: inherit;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #b91c1c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .notice {
+      background: #fff1d6;
+      padding: 12px;
+      border-radius: 8px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #b91c1c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    #message {
+      margin-top: 15px;
+      line-height: 1.6;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🩸 Blood Saathi</h1>
+    <p>जरूरतमंद मरीजों की मदद की एक कोशिश</p>
+  </header>  <main>
+    <a class="back" href="index.html">← मुख्य पेज पर जाएँ</a><section class="card">
+  <h2>❤️ इलाज के लिए सहायता आवेदन</h2>
+  <p>यदि मरीज को इलाज के खर्च में मदद चाहिए, तो नीचे दी गई जानकारी भरें।</p>
+
+  <div class="notice">
+    <strong>जरूरी सूचना:</strong> यह शुरुआती फॉर्म है। अभी आवेदन कहीं सेव नहीं होता और आर्थिक सहायता की कोई गारंटी नहीं है। आवेदन की जाँच, सहायता के नियम और सत्यापन की व्यवस्था बाद में बनाई जाएगी। अभी आधार नंबर, बैंक खाता विवरण या मेडिकल रिपोर्ट यहाँ न भरें।
+  </div>
+
+  <form id="helpForm">
+    <label for="patientName">मरीज का नाम</label>
+    <input id="patientName" name="patientName" type="text"
+      maxlength="100" autocomplete="name" required>
+
+    <label for="state">राज्य</label>
+    <input id="state" name="state" type="text"
+      maxlength="100" required>
+
+    <label for="city">शहर या जिला</label>
+    <input id="city" name="city" type="text"
+      maxlength="100" required>
+
+    <label for="hospital">अस्पताल का नाम</label>
+    <input id="hospital" name="hospital" type="text"
+      maxlength="150" required>
+
+    <label for="purpose">किस प्रकार की सहायता चाहिए?</label>
+    <select id="purpose" name="purpose" required>
+      <option value="">विकल्प चुनें</option>
+      <option value="blood">रक्त या रक्त से संबंधित खर्च</option>
+      <option value="treatment">इलाज का खर्च</option>
+      <option value="medicine">दवाइयों का खर्च</option>
+      <option value="other">अन्य चिकित्सा सहायता</option>
+    </select>
+
+    <label for="amount">अनुमानित सहायता राशि (₹)</label>
+    <input id="amount" name="amount" type="number"
+      min="1" max="10000000" step="1"
+      placeholder="जैसे 10000" required>
+
+    <label for="details">मरीज की स्थिति और सहायता की जरूरत</label>
+    <textarea id="details" name="details" rows="4"
+      maxlength="1000"
+      placeholder="केवल जरूरी जानकारी लिखें। निजी मेडिकल दस्तावेज न डालें।"
+      required></textarea>
+
+    <label for="contactName">संपर्क करने वाले का नाम</label>
+    <input id="contactName" name="contactName" type="text"
+      maxlength="100" required>
+
+    <label for="phone">संपर्क मोबाइल नंबर</label>
+    <input id="phone" name="phone" type="tel"
+      inputmode="numeric" pattern="[0-9]{10}"
+      maxlength="10" placeholder="10 अंकों का मोबाइल नंबर"
+      autocomplete="tel" required>
+
+    <label style="font-weight:normal;">
+      <input id="consent" type="checkbox" required
+        style="width:auto; margin-right:7px;">
+      मैं पुष्टि करता/करती हूँ कि मुझे यह जानकारी साझा करने की अनुमति है और समझता/समझती हूँ कि अभी आवेदन सेव नहीं होगा।
+    </label>
+
+    <button type="submit">जानकारी जाँचें</button>
+    <div id="message" role="status" aria-live="polite"></div>
+  </form>
+</section>
+
+  </main>  <footer>
+    Blood Saathi — जरूरतमंदों की मदद के लिए एक पहल ❤️
+  </footer>  <script>
+    document.getElementById("helpForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!this.checkValidity()) {
+        this.reportValidity();
+        return;
+      }
+
+      document.getElementById("message").textContent =
+        "जानकारी जाँच ली गई है, लेकिन आवेदन जमा नहीं हुआ है। " +
+        "यह फॉर्म अभी डेटाबेस से जुड़ा नहीं है। आपकी जानकारी सेव या किसी के साथ साझा नहीं की गई है।";
+
+      document.getElementById("message").style.color = "#9a3412";
+    });
+  </script></body>
+</html>
