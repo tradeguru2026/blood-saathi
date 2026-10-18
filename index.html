@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="hi">
+<!DOCTYPE html><html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#b71c1c">
   <meta name="description" content="Blood Saathi - Blood donors, patients aur zarooratmand parivaron ko madad tak pahunchane ki ek koshish.">
-  <title>Blood Saathi | रक्तदान, जीवनदान</title>
-
-  <style>
+  <title>Blood Saathi | रक्तदान, जीवनदान</title>  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -128,95 +125,71 @@
     footer p {
       margin: 5px 0;
     }
-  </style>
-</head>
-
-<body>
-
-  <header>
+  </style></head><body>  <header>
     <div class="logo">🩸</div>
     <h1>Blood Saathi</h1>
     <p>रक्तदान, जीवनदान — हर जीवन अनमोल है</p>
-  </header>
+  </header>  <main><section class="welcome">
+  <h2>आपका स्वागत है ❤️</h2>
+  <p>
+    रक्त की जरूरत हो या रक्तदान करना चाहते हों,
+    सही मदद तक पहुँचने की शुरुआत यहाँ से करें।
+  </p>
+</section>
 
-  <main>
+<section class="option">
+  <h3>🩸 मुझे रक्त चाहिए</h3>
+  <p>
+    जरूरतमंद मरीज या उनके परिवार के लिए रक्त की आवश्यकता
+    दर्ज करने के लिए नीचे जाएँ।
+  </p>
+  <a class="btn" href="blood-request.html">
+    रक्त सहायता के लिए आगे बढ़ें
+  </a>
+</section>
 
-    <section class="welcome">
-      <h2>आपका स्वागत है ❤️</h2>
-      <p>
-        रक्त की जरूरत हो या रक्तदान करना चाहते हों,
-        सही मदद तक पहुँचने की शुरुआत यहाँ से करें।
-      </p>
-    </section>
+<section class="option">
+  <h3>❤️ मैं रक्तदान करना चाहता हूँ</h3>
+  <p>
+    रक्तदाता बनकर जरूरतमंद लोगों की मदद करने की पहल करें।
+  </p>
+  <a class="btn secondary" href="donor-register.html">
+    रक्तदाता बनें
+  </a>
+</section>
 
-    <section class="option">
-      <h3>🩸 मुझे रक्त चाहिए</h3>
-      <p>
-        जरूरतमंद मरीज या उनके परिवार के लिए रक्त की आवश्यकता
-        दर्ज करने की सुविधा जल्द उपलब्ध होगी।
-      </p>
-      <button class="btn" onclick="showMessage()">
-        रक्त सहायता के लिए आगे बढ़ें
-      </button>
-    </section>
+<section class="option">
+  <h3>🏥 ब्लड बैंक की जानकारी</h3>
+  <p>
+    अपने शहर में ब्लड बैंक की जानकारी खोजने के लिए आगे बढ़ें।
+  </p>
+  <a class="btn light" href="blood-banks.html">
+    जानकारी देखें
+  </a>
+</section>
 
-    <section class="option">
-      <h3>❤️ मैं रक्तदान करना चाहता हूँ</h3>
-      <p>
-        रक्तदाता बनकर जरूरतमंद लोगों की मदद करने की पहल करें।
-      </p>
-      <button class="btn secondary" onclick="showMessage()">
-        रक्तदाता बनें
-      </button>
-    </section>
+<section class="option">
+  <h3>🤲 जरूरतमंद मरीज की सहायता</h3>
+  <p>
+    इलाज के खर्च में मदद की जरूरत के बारे में आवेदन की जानकारी पाएँ।
+  </p>
+  <a class="btn light" href="patient-help.html">
+    सहायता के बारे में जानें
+  </a>
+</section>
 
-    <section class="option">
-      <h3>🏥 ब्लड बैंक की जानकारी</h3>
-      <p>
-        ब्लड बैंक और रक्त की उपलब्धता के बारे में
-        सत्यापित जानकारी प्राप्त करने का प्रयास करें।
-      </p>
-      <button class="btn light" onclick="showMessage()">
-        जानकारी देखें
-      </button>
-    </section>
+<div class="notice">
+  <strong>महत्वपूर्ण सूचना:</strong>
+  यह Blood Saathi की शुरुआती वेबसाइट है।
+  अभी ये फॉर्म डेटाबेस से जुड़े नहीं हैं और जानकारी सेव नहीं होती।
+  रक्त की वास्तविक उपलब्धता, रक्तदान की पात्रता और शुल्क की
+  पुष्टि संबंधित अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से करें।
+  आर्थिक सहायता का आवेदन करने से सहायता मिलने की गारंटी नहीं है।
+</div>
 
-    <section class="option">
-      <h3>🤲 जरूरतमंद मरीज की सहायता</h3>
-      <p>
-        आर्थिक सहायता की जरूरत वाले मरीजों के लिए
-        सहायता आवेदन की सुविधा भविष्य में जोड़ी जाएगी।
-      </p>
-      <button class="btn light" onclick="showMessage()">
-        सहायता के बारे में जानें
-      </button>
-    </section>
-
-    <div class="notice">
-      <strong>महत्वपूर्ण सूचना:</strong>
-      यह Blood Saathi की शुरुआती वेबसाइट है।
-      अभी रक्तदाता पंजीकरण, रक्त अनुरोध, ब्लड बैंक की
-      उपलब्धता और आर्थिक सहायता की सुविधाएँ सक्रिय नहीं हैं।
-      रक्त की वास्तविक उपलब्धता और रक्तदान की पात्रता
-      की पुष्टि संबंधित अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से करें।
-    </div>
-
-  </main>
-
-  <footer>
+  </main>  <footer>
     <p><strong>Blood Saathi 🩸</strong></p>
     <p>इंसानियत के लिए एक छोटी-सी कोशिश ❤️</p>
     <p>सुरक्षा • सहयोग • विश्वास</p>
-  </footer>
-
-  <script>
-    function showMessage() {
-      alert(
-        "Blood Saathi ki yeh suvidha abhi taiyar ki ja rahi hai. " +
-        "Kripya jald dobara aayein."
-      );
-    }
-  </script>
-
-</body>
+  </footer></body>
 </html>
