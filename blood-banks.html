@@ -1,159 +1,376 @@
-<!DOCTYPE html><html lang="hi">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#b91c1c">
-  <title>Blood Bank Information | Blood Saathi</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff7f7;
-      color: #292929;
-    }
-    header {
-      background: #b91c1c;
-      color: white;
-      text-align: center;
-      padding: 22px 14px;
-    }
-    header h1 { margin: 0 0 8px; }
-    header p { margin: 0; }
-    main {
-      max-width: 650px;
-      margin: 22px auto;
-      padding: 0 14px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 18px;
-      border-radius: 14px;
-      box-shadow: 0 3px 12px #00000012;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin-top: 7px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      background: white;
-    }
-    button {
-      width: 100%;
-      margin-top: 18px;
-      padding: 13px;
-      background: #b91c1c;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .notice {
-      background: #fff1d6;
-      padding: 12px;
-      border-radius: 8px;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-    .back {
-      display: inline-block;
-      margin-bottom: 16px;
-      color: #b91c1c;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    #result {
-      margin-top: 16px;
-      line-height: 1.6;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #666;
-      font-size: 13px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ब्लड बैंक खोजें | Blood Saathi</title>
+    <meta name="description" content="अपने शहर में ब्लड बैंक की जानकारी खोजने के लिए Blood Saathi का फॉर्म।">
+    <meta name="theme-color" content="#b91c1c">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Noto Sans Devanagari", sans-serif;
+            background: #fff7f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #991b1b;
+            color: white;
+            text-align: center;
+            padding: 24px 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        header p {
+            margin: 7px 0 0;
+            font-size: 14px;
+        }
+
+        main {
+            max-width: 680px;
+            margin: 22px auto;
+            padding: 0 14px;
+        }
+
+        .home-link {
+            display: inline-block;
+            background: #991b1b;
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #f0dada;
+            border-radius: 14px;
+            padding: 22px 17px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            color: #991b1b;
+            font-size: 23px;
+        }
+
+        .intro {
+            margin: 0 0 22px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .field {
+            margin-bottom: 17px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input,
+        select {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+            color: #222;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #b91c1c;
+            outline-offset: 1px;
+            border-color: #b91c1c;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 9px;
+            background: #b91c1c;
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #7f1d1d;
+        }
+
+        .notice {
+            margin-top: 18px;
+            padding: 14px;
+            border-radius: 9px;
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            color: #7c2d12;
+            font-size: 13px;
+        }
+
+        .message {
+            display: none;
+            margin-top: 17px;
+            padding: 13px;
+            border-radius: 9px;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            font-size: 14px;
+        }
+
+        .next-step {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+        }
+
+        .next-step h3 {
+            margin: 0 0 7px;
+            color: #166534;
+            font-size: 17px;
+        }
+
+        .next-step p {
+            margin: 0;
+            font-size: 13px;
+            color: #374151;
+        }
+
+        .request-link {
+            display: block;
+            margin-top: 12px;
+            padding: 12px;
+            background: #166534;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 12px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 3px;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>🩸 Blood Saathi</h1>
-    <p>रक्त की जरूरत में मदद की एक कोशिश</p>
-  </header>  <main>
-    <a class="back" href="index.html">← मुख्य पेज पर जाएँ</a><section class="card">
-  <h2>🏥 ब्लड बैंक की जानकारी खोजें</h2>
-  <p>अपने शहर में ब्लड बैंक की जानकारी खोजने की शुरुआत करें।</p>
 
-  <div class="notice">
-    <strong>जरूरी सूचना:</strong> अभी इस पेज पर ब्लड बैंकों का सत्यापित डेटाबेस जुड़ा नहीं है। नीचे दिया गया फॉर्म केवल खोज के लिए जानकारी जाँचता है; यह वास्तविक ब्लड बैंक की सूची या उपलब्ध रक्त की पुष्टि नहीं करता।
-  </div>
+    <header>
+        <h1>🩸 Blood Saathi</h1>
+        <p>रक्तदान, जीवनदान — हर जीवन अनमोल है</p>
+    </header>
 
-  <form id="searchForm">
-    <label for="state">राज्य चुनें या लिखें</label>
-    <input id="state" name="state" type="text"
-      maxlength="100" placeholder="जैसे उत्तराखंड" required>
+    <main>
+        <a class="home-link" href="index.html">
+            🏠 होम पेज पर जाएँ
+        </a>
 
-    <label for="city">शहर या जिला</label>
-    <input id="city" name="city" type="text"
-      maxlength="100" placeholder="जैसे देहरादून" required>
+        <section class="card">
+            <h2>🏥 ब्लड बैंक की जानकारी खोजें</h2>
 
-    <label for="bloodGroup">ब्लड ग्रुप (वैकल्पिक)</label>
-    <select id="bloodGroup" name="bloodGroup">
-      <option value="">कोई भी ब्लड ग्रुप</option>
-      <option>A+</option>
-      <option>A-</option>
-      <option>B+</option>
-      <option>B-</option>
-      <option>AB+</option>
-      <option>AB-</option>
-      <option>O+</option>
-      <option>O-</option>
-    </select>
+            <p class="intro">
+                अपने राज्य और शहर की जानकारी चुनें।
+                भविष्य में सत्यापित ब्लड बैंक की सूची उपलब्ध
+                होने पर यह जानकारी खोजने में मदद करेगी।
+            </p>
 
-    <button type="submit">खोज की जानकारी जाँचें</button>
-  </form>
+            <form id="searchForm">
 
-  <div id="result" role="status" aria-live="polite"></div>
-</section>
+                <div class="field">
+                    <label for="state">राज्य या केंद्र शासित प्रदेश *</label>
 
-<section class="card">
-  <h3>🩸 रक्त की जरूरत अभी है?</h3>
-  <p>अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से सीधे संपर्क करके रक्त की उपलब्धता, सही ब्लड ग्रुप, आवश्यक घटक और शुल्क की पुष्टि करें।</p>
-  <p>आपात स्थिति में ऑनलाइन खोज के परिणाम का इंतजार न करें।</p>
-  <a href="blood-request.html" style="color:#b91c1c;font-weight:bold;">
-    ब्लड रिक्वेस्ट फॉर्म खोलें →
-  </a>
-</section>
+                    <select id="state" name="state" required>
+                        <option value="">अपना राज्य चुनें</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chhattisgarh</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Uttarakhand</option>
+                        <option>West Bengal</option>
+                        <option>Andaman and Nicobar Islands</option>
+                        <option>Chandigarh</option>
+                        <option>Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option>Delhi</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Ladakh</option>
+                        <option>Lakshadweep</option>
+                        <option>Puducherry</option>
+                    </select>
+                </div>
 
-  </main>  <footer>
-    Blood Saathi — जरूरतमंदों की मदद के लिए एक पहल ❤️
-  </footer>  <script>
-    document.getElementById("searchForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+                <div class="field">
+                    <label for="city">शहर या जिला *</label>
 
-      const state = document.getElementById("state").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const group = document.getElementById("bloodGroup").value;
-      const result = document.getElementById("result");
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        minlength="2"
+                        maxlength="100"
+                        required
+                        placeholder="जैसे: Dehradun">
+                </div>
 
-      if (!state || !city) {
-        result.textContent = "कृपया राज्य और शहर की जानकारी भरें।";
-        return;
-      }
+                <div class="field">
+                    <label for="bloodGroup">
+                        ब्लड ग्रुप (वैकल्पिक)
+                    </label>
 
-      result.textContent =
-        "आपकी खोज की जानकारी तैयार है: " + city + ", " + state +
-        (group ? " | ब्लड ग्रुप: " + group : "") +
-        "। अभी सत्यापित ब्लड बैंक सूची उपलब्ध नहीं है। यह जानकारी कहीं सेव नहीं हुई है।";
-    });
-  </script></body>
+                    <select id="bloodGroup" name="bloodGroup">
+                        <option value="">सभी ब्लड ग्रुप</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="Unknown">ब्लड ग्रुप की जानकारी नहीं</option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    खोज की जानकारी जाँचें
+                </button>
+
+                <div
+                    class="message"
+                    id="searchMessage"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+            </form>
+
+            <div class="notice">
+                <strong>⚠️ महत्वपूर्ण:</strong>
+                यह खोज फॉर्म अभी किसी ब्लड बैंक डेटाबेस से जुड़ा
+                नहीं है। इसलिए यह वास्तविक ब्लड बैंक के नाम,
+                फोन नंबर, रक्त की उपलब्धता या कीमत नहीं दिखाता।
+                तत्काल जरूरत होने पर सीधे अस्पताल या लाइसेंस
+                प्राप्त ब्लड बैंक से संपर्क करें।
+            </div>
+
+            <div class="next-step">
+                <h3>🩸 रक्त की जरूरत है?</h3>
+
+                <p>
+                    यदि किसी मरीज को रक्त चाहिए, तो रक्त की जरूरत
+                    वाला फॉर्म खोल सकते हैं। ध्यान दें कि आवेदन
+                    अभी सेव नहीं होगा।
+                </p>
+
+                <a class="request-link" href="blood-request.html">
+                    रक्त की जरूरत का फॉर्म खोलें
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>🩸 Blood Saathi — रक्तदान, जीवनदान</p>
+        <p>© <span id="year"></span> Blood Saathi</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        const searchForm = document.getElementById("searchForm");
+        const searchMessage = document.getElementById("searchMessage");
+
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!searchForm.checkValidity()) {
+                searchForm.reportValidity();
+                return;
+            }
+
+            const state = document.getElementById("state").value;
+            const city = document.getElementById("city").value.trim();
+            const bloodGroup =
+                document.getElementById("bloodGroup").value;
+
+            searchMessage.style.display = "block";
+
+            const selectedGroup = bloodGroup
+                ? " चुना गया ब्लड ग्रुप: " + bloodGroup + "."
+                : "";
+
+            searchMessage.textContent =
+                "आपकी खोज की जानकारी जाँच ली गई है: " +
+                city + ", " + state + "." +
+                selectedGroup +
+                " लेकिन सत्यापित ब्लड बैंक डेटाबेस अभी जुड़ा नहीं है, इसलिए कोई परिणाम या उपलब्धता नहीं दिखाई जा सकती। तत्काल जरूरत होने पर सीधे अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से संपर्क करें।";
+
+            searchMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        });
+    </script>
+
+</body>
 </html>
