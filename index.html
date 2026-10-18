@@ -1,195 +1,518 @@
-<!DOCTYPE html><html lang="hi">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#b71c1c">
-  <meta name="description" content="Blood Saathi - Blood donors, patients aur zarooratmand parivaron ko madad tak pahunchane ki ek koshish.">
-  <title>Blood Saathi | रक्तदान, जीवनदान</title>  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff7f7;
-      color: #292929;
-      line-height: 1.6;
-    }
+    <title>Blood Saathi | रक्तदान, जीवनदान</title>
 
-    header {
-      background: #b71c1c;
-      color: white;
-      text-align: center;
-      padding: 28px 16px;
-    }
+    <meta name="description" content="Blood Saathi एक जनसेवा पहल है जो जरूरतमंद मरीजों, रक्तदाताओं और रक्त संबंधी सहायता की जानकारी को एक जगह लाने का प्रयास करती है।">
 
-    .logo {
-      font-size: 42px;
-      margin-bottom: 5px;
-    }
+    <meta name="theme-color" content="#b91c1c">
 
-    header h1 {
-      font-size: 30px;
-    }
+    <style>
+        :root {
+            --red: #b91c1c;
+            --dark-red: #7f1d1d;
+            --light-red: #fef2f2;
+            --green: #166534;
+            --text: #222222;
+            --muted: #5f6368;
+            --white: #ffffff;
+            --border: #eeeeee;
+        }
 
-    header p {
-      font-size: 15px;
-      margin-top: 5px;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    main {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px 15px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .welcome {
-      text-align: center;
-      padding: 15px 5px 25px;
-    }
+        body {
+            margin: 0;
+            font-family: Arial, "Noto Sans Devanagari", sans-serif;
+            background: #fffafa;
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    .welcome h2 {
-      color: #b71c1c;
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    .welcome p {
-      font-size: 15px;
-    }
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #2563eb;
+            outline-offset: 3px;
+        }
 
-    .option {
-      background: white;
-      border: 1px solid #f0d4d4;
-      border-radius: 14px;
-      padding: 18px;
-      margin-bottom: 15px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    }
+        .topbar {
+            background: var(--dark-red);
+            color: white;
+            text-align: center;
+            padding: 9px 12px;
+            font-size: 13px;
+        }
 
-    .option h3 {
-      font-size: 19px;
-      margin-bottom: 6px;
-    }
+        header {
+            background: var(--white);
+            padding: 18px 15px;
+            border-bottom: 1px solid var(--border);
+        }
 
-    .option p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 13px;
-    }
+        .brand {
+            max-width: 1050px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
 
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 13px;
-      border-radius: 9px;
-      background: #b71c1c;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--red);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
 
-    .btn.secondary {
-      background: #176b45;
-    }
+        .brand h1 {
+            margin: 0;
+            color: var(--red);
+            font-size: 27px;
+            line-height: 1.25;
+        }
 
-    .btn.light {
-      background: #fff0f0;
-      color: #a31515;
-      border: 1px solid #e6bcbc;
-    }
+        .brand p {
+            margin: 4px 0 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
 
-    .notice {
-      background: #fff3cd;
-      border-radius: 10px;
-      padding: 14px;
-      margin: 20px 0;
-      font-size: 13px;
-    }
+        .hero {
+            background: linear-gradient(145deg, #b91c1c, #7f1d1d);
+            color: white;
+            padding: 42px 18px 38px;
+            text-align: center;
+        }
 
-    footer {
-      background: #292929;
-      color: white;
-      text-align: center;
-      padding: 22px 15px;
-      font-size: 13px;
-      margin-top: 15px;
-    }
+        .hero-inner {
+            max-width: 780px;
+            margin: auto;
+        }
 
-    footer p {
-      margin: 5px 0;
-    }
-  </style></head><body>  <header>
-    <div class="logo">🩸</div>
-    <h1>Blood Saathi</h1>
-    <p>रक्तदान, जीवनदान — हर जीवन अनमोल है</p>
-  </header>  <main><section class="welcome">
-  <h2>आपका स्वागत है ❤️</h2>
-  <p>
-    रक्त की जरूरत हो या रक्तदान करना चाहते हों,
-    सही मदद तक पहुँचने की शुरुआत यहाँ से करें।
-  </p>
-</section>
+        .hero-symbol {
+            font-size: 48px;
+            line-height: 1.3;
+        }
 
-<section class="option">
-  <h3>🩸 मुझे रक्त चाहिए</h3>
-  <p>
-    जरूरतमंद मरीज या उनके परिवार के लिए रक्त की आवश्यकता
-    दर्ज करने के लिए नीचे जाएँ।
-  </p>
-  <a class="btn" href="blood-request.html">
-    रक्त सहायता के लिए आगे बढ़ें
-  </a>
-</section>
+        .hero h2 {
+            margin: 12px 0;
+            font-size: clamp(25px, 6vw, 37px);
+            line-height: 1.35;
+        }
 
-<section class="option">
-  <h3>❤️ मैं रक्तदान करना चाहता हूँ</h3>
-  <p>
-    रक्तदाता बनकर जरूरतमंद लोगों की मदद करने की पहल करें।
-  </p>
-  <a class="btn secondary" href="donor-register.html">
-    रक्तदाता बनें
-  </a>
-</section>
+        .hero p {
+            max-width: 620px;
+            margin: 0 auto 22px;
+            font-size: 16px;
+            color: #fff7f7;
+        }
 
-<section class="option">
-  <h3>🏥 ब्लड बैंक की जानकारी</h3>
-  <p>
-    अपने शहर में ब्लड बैंक की जानकारी खोजने के लिए आगे बढ़ें।
-  </p>
-  <a class="btn light" href="blood-banks.html">
-    जानकारी देखें
-  </a>
-</section>
+        .hero-button {
+            display: inline-block;
+            background: white;
+            color: var(--dark-red);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 22px;
+            border-radius: 10px;
+            margin: 5px;
+        }
 
-<section class="option">
-  <h3>🤲 जरूरतमंद मरीज की सहायता</h3>
-  <p>
-    इलाज के खर्च में मदद की जरूरत के बारे में आवेदन की जानकारी पाएँ।
-  </p>
-  <a class="btn light" href="patient-help.html">
-    सहायता के बारे में जानें
-  </a>
-</section>
+        .hero-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
 
-<div class="notice">
-  <strong>महत्वपूर्ण सूचना:</strong>
-  यह Blood Saathi की शुरुआती वेबसाइट है।
-  अभी ये फॉर्म डेटाबेस से जुड़े नहीं हैं और जानकारी सेव नहीं होती।
-  रक्त की वास्तविक उपलब्धता, रक्तदान की पात्रता और शुल्क की
-  पुष्टि संबंधित अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से करें।
-  आर्थिक सहायता का आवेदन करने से सहायता मिलने की गारंटी नहीं है।
-</div>
+        main {
+            max-width: 1050px;
+            margin: auto;
+            padding: 30px 15px;
+        }
 
-  </main>  <footer>
-    <p><strong>Blood Saathi 🩸</strong></p>
-    <p>इंसानियत के लिए एक छोटी-सी कोशिश ❤️</p>
-    <p>सुरक्षा • सहयोग • विश्वास</p>
-  </footer></body>
+        .section-heading {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 8px;
+            font-size: 25px;
+            color: var(--dark-red);
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 20px 15px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 13px;
+            background: var(--light-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 17px;
+            line-height: 1.4;
+            margin: 0 0 8px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 0 0 17px;
+            flex-grow: 1;
+        }
+
+        .card a {
+            display: inline-block;
+            width: 100%;
+            background: var(--red);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            padding: 11px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .card a:hover {
+            background: var(--dark-red);
+        }
+
+        .free-note {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 17px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .free-note h3 {
+            margin: 0 0 6px;
+            color: var(--green);
+            font-size: 18px;
+        }
+
+        .free-note p {
+            margin: 0;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .important {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .important h3 {
+            margin: 0 0 7px;
+            color: #9a3412;
+            font-size: 17px;
+        }
+
+        .important p {
+            margin: 0;
+            color: #7c2d12;
+            font-size: 13px;
+        }
+
+        .about {
+            margin-top: 30px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px 18px;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin: 0 0 10px;
+            color: var(--dark-red);
+            font-size: 22px;
+        }
+
+        .about p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 24px 15px;
+            background: #291414;
+            color: white;
+            text-align: center;
+        }
+
+        footer h3 {
+            margin: 0 0 7px;
+            font-size: 21px;
+        }
+
+        footer p {
+            margin: 6px 0;
+            font-size: 13px;
+            color: #f3dede;
+        }
+
+        .footer-note {
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px solid #694040;
+            font-size: 12px;
+        }
+
+        @media (min-width: 700px) {
+            .cards {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .hero {
+                padding: 55px 20px 48px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .brand h1 {
+                font-size: 23px;
+            }
+
+            .hero-button {
+                display: block;
+                margin: 10px auto;
+                max-width: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+        ❤️ एक नेक पहल — जरूरतमंदों की मदद के लिए
+    </div>
+
+    <header>
+        <div class="brand">
+            <div class="logo" aria-hidden="true">🩸</div>
+
+            <div>
+                <h1>Blood Saathi</h1>
+                <p>रक्तदान, जीवनदान — हर जीवन अनमोल है</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-symbol" aria-hidden="true">❤️‍🩹</div>
+
+            <h2>आपकी एक कोशिश, किसी की जिंदगी बचा सकती है</h2>
+
+            <p>
+                जरूरतमंद मरीजों, रक्तदाताओं और सहायता की तलाश कर रहे
+                परिवारों को जोड़ने की एक जनसेवा पहल।
+            </p>
+
+            <a class="hero-button" href="blood-request.html">
+                🩸 मुझे रक्त चाहिए
+            </a>
+
+            <a class="hero-button secondary" href="donor-register.html">
+                ❤️ मैं रक्तदान करना चाहता हूँ
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <section aria-labelledby="services-title">
+            <div class="section-heading">
+                <h2 id="services-title">आपको किस तरह की मदद चाहिए?</h2>
+                <p>अपनी जरूरत के अनुसार नीचे दिए गए विकल्प को चुनें।</p>
+            </div>
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">🩸</div>
+
+                    <h3>रक्त की जरूरत है?</h3>
+
+                    <p>
+                        मरीज और अस्पताल की जानकारी के साथ रक्त की जरूरत
+                        का आवेदन तैयार करें।
+                    </p>
+
+                    <a href="blood-request.html">
+                        रक्त के लिए आवेदन करें
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">❤️</div>
+
+                    <h3>रक्तदाता बनें</h3>
+
+                    <p>
+                        रक्तदान में रुचि रखने वाले व्यक्ति के रूप में
+                        अपना विवरण दर्ज करने का फॉर्म खोलें।
+                    </p>
+
+                    <a href="donor-register.html">
+                        रक्तदाता रजिस्ट्रेशन
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">🏥</div>
+
+                    <h3>ब्लड बैंक की जानकारी</h3>
+
+                    <p>
+                        अपने शहर में ब्लड बैंक की जानकारी खोजने के लिए
+                        खोज फॉर्म खोलें।
+                    </p>
+
+                    <a href="blood-banks.html">
+                        ब्लड बैंक खोजें
+                    </a>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">🤝</div>
+
+                    <h3>मरीज की आर्थिक सहायता</h3>
+
+                    <p>
+                        इलाज के खर्च में मदद की जरूरत होने पर
+                        सहायता आवेदन का फॉर्म खोलें।
+                    </p>
+
+                    <a href="patient-help.html">
+                        सहायता के लिए आवेदन
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="free-note" aria-label="सेवा की जानकारी">
+            <h3>💚 हमारा उद्देश्य — जरूरतमंदों की मदद</h3>
+
+            <p>
+                Blood Saathi का उद्देश्य रक्तदान और मरीजों की सहायता
+                के लिए लोगों को जोड़ना है। रक्त की जरूरत वाले मरीजों
+                के लिए मदद का रास्ता आसान बनाने का प्रयास किया जाएगा।
+            </p>
+        </section>
+
+        <section class="important" aria-labelledby="emergency-title">
+            <h3 id="emergency-title">⚠️ जरूरी सूचना</h3>
+
+            <p>
+                यह वेबसाइट अभी शुरुआती निर्माण चरण में है।
+                फिलहाल फॉर्म का डेटा सर्वर पर सेव नहीं होता और
+                रक्तदाता मिलान, ब्लड बैंक की उपलब्धता तथा सहायता
+                की पुष्टि की सुविधा सक्रिय नहीं है। तत्काल रक्त की
+                जरूरत होने पर सीधे अस्पताल या लाइसेंस प्राप्त
+                ब्लड बैंक से संपर्क करें। रक्त की उपलब्धता और
+                उपयुक्तता की पुष्टि संबंधित चिकित्सा विशेषज्ञों
+                से अवश्य करें।
+            </p>
+        </section>
+
+        <section class="about" aria-labelledby="about-title">
+            <h2 id="about-title">Blood Saathi के बारे में</h2>
+
+            <p>
+                हमारा सपना है कि भारत के किसी भी शहर या गाँव में
+                रक्त की जरूरत होने पर लोगों को सही जानकारी और
+                मदद पाने का रास्ता मिल सके। हम इस प्लेटफॉर्म को
+                सरल, उपयोगी और जरूरतमंदों के लिए सुलभ बनाने का
+                प्रयास कर रहे हैं। आपकी निजता और सुरक्षा महत्वपूर्ण है।
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <h3>🩸 Blood Saathi</h3>
+
+        <p>रक्तदान, जीवनदान — हर जीवन अनमोल है।</p>
+
+        <p>इंसानियत की सेवा, हम सबकी जिम्मेदारी।</p>
+
+        <div class="footer-note">
+            <p>
+                © <span id="current-year"></span> Blood Saathi
+            </p>
+
+            <p>
+                यह एक जनसेवा पहल है। किसी भी सहायता या रक्त की
+                उपलब्धता की गारंटी नहीं दी जाती।
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("current-year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
 </html>
