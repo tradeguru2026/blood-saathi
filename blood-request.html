@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b91c1c">
+  <title>Blood Request | Blood Saathi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff7f7;
+      color: #292929;
+    }
+    header {
+      background: #b91c1c;
+      color: white;
+      text-align: center;
+      padding: 22px 14px;
+    }
+    header h1 { margin: 0 0 8px; }
+    header p { margin: 0; }
+    .container {
+      max-width: 600px;
+      margin: 22px auto;
+      padding: 0 14px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px #00000012;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      background: white;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #b91c1c;
+      color: white;
+      border: 0;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .notice {
+      background: #fff1d6;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .back {
+      display: inline-block;
+      margin: 0 0 16px;
+      color: #b91c1c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    #message {
+      margin-top: 15px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🩸 Blood Saathi</h1>
+    <p>रक्त की जरूरत में मदद की एक कोशिश</p>
+  </header>  <main class="container">
+    <a class="back" href="index.html">← मुख्य पेज पर जाएँ</a><div class="card">
+  <h2>🩸 रक्त की जरूरत के लिए आवेदन</h2>
+  <p>कृपया मरीज और अस्पताल की सही जानकारी भरें।</p>
+
+  <div class="notice">
+    <strong>जरूरी सूचना:</strong> यह शुरुआती फॉर्म है। अभी जानकारी किसी सर्वर या डेटाबेस में सेव नहीं होती और किसी डोनर को सूचना नहीं भेजी जाती। मरीज का फोन नंबर सार्वजनिक रूप से नहीं दिखाया जाएगा। आपात स्थिति में अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से तुरंत संपर्क करें।
+  </div>
+
+  <form id="bloodRequestForm">
+    <label for="patientName">मरीज का नाम</label>
+    <input id="patientName" name="patientName" type="text"
+      maxlength="100" autocomplete="name" required>
+
+    <label for="bloodGroup">ब्लड ग्रुप</label>
+    <select id="bloodGroup" name="bloodGroup" required>
+      <option value="">ब्लड ग्रुप चुनें</option>
+      <option>A+</option>
+      <option>A-</option>
+      <option>B+</option>
+      <option>B-</option>
+      <option>AB+</option>
+      <option>AB-</option>
+      <option>O+</option>
+      <option>O-</option>
+      <option>पता नहीं</option>
+    </select>
+
+    <label for="units">कितनी यूनिट चाहिए?</label>
+    <select id="units" name="units" required>
+      <option value="">यूनिट चुनें</option>
+      <option value="1">1 यूनिट</option>
+      <option value="2">2 यूनिट</option>
+      <option value="3">3 यूनिट</option>
+      <option value="4">4 यूनिट</option>
+      <option value="5+">5 या अधिक यूनिट</option>
+    </select>
+
+    <label for="hospital">अस्पताल का नाम</label>
+    <input id="hospital" name="hospital" type="text"
+      maxlength="150" required>
+
+    <label for="state">राज्य</label>
+    <input id="state" name="state" type="text"
+      maxlength="100" autocomplete="address-level1" required>
+
+    <label for="city">शहर या जिला</label>
+    <input id="city" name="city" type="text"
+      maxlength="100" autocomplete="address-level2" required>
+
+    <label for="neededBy">रक्त कब तक चाहिए?</label>
+    <input id="neededBy" name="neededBy" type="datetime-local" required>
+
+    <label for="contactName">संपर्क करने वाले का नाम</label>
+    <input id="contactName" name="contactName" type="text"
+      maxlength="100" autocomplete="name" required>
+
+    <label for="phone">संपर्क मोबाइल नंबर</label>
+    <input id="phone" name="phone" type="tel"
+      inputmode="numeric" autocomplete="tel"
+      pattern="[0-9]{10}" maxlength="10"
+      placeholder="10 अंकों का मोबाइल नंबर" required>
+
+    <label for="notes">अतिरिक्त जानकारी (वैकल्पिक)</label>
+    <textarea id="notes" name="notes" rows="3"
+      maxlength="500"
+      placeholder="जरूरी जानकारी लिखें। यहाँ आधार नंबर या मेडिकल रिपोर्ट न डालें।"></textarea>
+
+    <label>
+      <input type="checkbox" id="consent" required
+        style="width:auto; margin-right:7px;">
+      मैं पुष्टि करता/करती हूँ कि दी गई जानकारी साझा करने की अनुमति है। मुझे समझ है कि अभी फॉर्म की जानकारी सेव नहीं होगी।
+    </label>
+
+    <button type="submit">आवेदन की जानकारी जाँचें</button>
+    <div id="message" role="status" aria-live="polite"></div>
+  </form>
+</div>
+
+  </main>  <footer>
+    Blood Saathi — जरूरतमंदों की मदद के लिए एक पहल ❤️
+  </footer>  <script>
+    const form = document.getElementById("bloodRequestForm");
+    const message = document.getElementById("message");
+    const neededBy = document.getElementById("neededBy");
+
+    const now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+    neededBy.min = now.toISOString().slice(0, 16);
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      message.textContent =
+        "जानकारी जाँच ली गई है, लेकिन आवेदन अभी जमा नहीं हुआ है। " +
+        "यह पेज अभी डेटाबेस से जुड़ा नहीं है, इसलिए आपकी जानकारी सेव या किसी डोनर को भेजी नहीं गई।";
+
+      message.style.color = "#9a3412";
+    });
+  </script></body>
+</html>
