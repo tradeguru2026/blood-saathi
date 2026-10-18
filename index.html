@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#b71c1c">
+  <meta name="description" content="Blood Saathi - Blood donors, patients aur zarooratmand parivaron ko madad tak pahunchane ki ek koshish.">
+  <title>Blood Saathi | रक्तदान, जीवनदान</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7f7;
+      color: #292929;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #b71c1c;
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+    }
+
+    .logo {
+      font-size: 42px;
+      margin-bottom: 5px;
+    }
+
+    header h1 {
+      font-size: 30px;
+    }
+
+    header p {
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px 15px;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 15px 5px 25px;
+    }
+
+    .welcome h2 {
+      color: #b71c1c;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .welcome p {
+      font-size: 15px;
+    }
+
+    .option {
+      background: white;
+      border: 1px solid #f0d4d4;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .option h3 {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .option p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 13px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      background: #b71c1c;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn.secondary {
+      background: #176b45;
+    }
+
+    .btn.light {
+      background: #fff0f0;
+      color: #a31515;
+      border: 1px solid #e6bcbc;
+    }
+
+    .notice {
+      background: #fff3cd;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 20px 0;
+      font-size: 13px;
+    }
+
+    footer {
+      background: #292929;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🩸</div>
+    <h1>Blood Saathi</h1>
+    <p>रक्तदान, जीवनदान — हर जीवन अनमोल है</p>
+  </header>
+
+  <main>
+
+    <section class="welcome">
+      <h2>आपका स्वागत है ❤️</h2>
+      <p>
+        रक्त की जरूरत हो या रक्तदान करना चाहते हों,
+        सही मदद तक पहुँचने की शुरुआत यहाँ से करें।
+      </p>
+    </section>
+
+    <section class="option">
+      <h3>🩸 मुझे रक्त चाहिए</h3>
+      <p>
+        जरूरतमंद मरीज या उनके परिवार के लिए रक्त की आवश्यकता
+        दर्ज करने की सुविधा जल्द उपलब्ध होगी।
+      </p>
+      <button class="btn" onclick="showMessage()">
+        रक्त सहायता के लिए आगे बढ़ें
+      </button>
+    </section>
+
+    <section class="option">
+      <h3>❤️ मैं रक्तदान करना चाहता हूँ</h3>
+      <p>
+        रक्तदाता बनकर जरूरतमंद लोगों की मदद करने की पहल करें।
+      </p>
+      <button class="btn secondary" onclick="showMessage()">
+        रक्तदाता बनें
+      </button>
+    </section>
+
+    <section class="option">
+      <h3>🏥 ब्लड बैंक की जानकारी</h3>
+      <p>
+        ब्लड बैंक और रक्त की उपलब्धता के बारे में
+        सत्यापित जानकारी प्राप्त करने का प्रयास करें।
+      </p>
+      <button class="btn light" onclick="showMessage()">
+        जानकारी देखें
+      </button>
+    </section>
+
+    <section class="option">
+      <h3>🤲 जरूरतमंद मरीज की सहायता</h3>
+      <p>
+        आर्थिक सहायता की जरूरत वाले मरीजों के लिए
+        सहायता आवेदन की सुविधा भविष्य में जोड़ी जाएगी।
+      </p>
+      <button class="btn light" onclick="showMessage()">
+        सहायता के बारे में जानें
+      </button>
+    </section>
+
+    <div class="notice">
+      <strong>महत्वपूर्ण सूचना:</strong>
+      यह Blood Saathi की शुरुआती वेबसाइट है।
+      अभी रक्तदाता पंजीकरण, रक्त अनुरोध, ब्लड बैंक की
+      उपलब्धता और आर्थिक सहायता की सुविधाएँ सक्रिय नहीं हैं।
+      रक्त की वास्तविक उपलब्धता और रक्तदान की पात्रता
+      की पुष्टि संबंधित अस्पताल या लाइसेंस प्राप्त ब्लड बैंक से करें।
+    </div>
+
+  </main>
+
+  <footer>
+    <p><strong>Blood Saathi 🩸</strong></p>
+    <p>इंसानियत के लिए एक छोटी-सी कोशिश ❤️</p>
+    <p>सुरक्षा • सहयोग • विश्वास</p>
+  </footer>
+
+  <script>
+    function showMessage() {
+      alert(
+        "Blood Saathi ki yeh suvidha abhi taiyar ki ja rahi hai. " +
+        "Kripya jald dobara aayein."
+      );
+    }
+  </script>
+
+</body>
+</html>
