@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>मरीज की आर्थिक सहायता | Blood Saathi</title>
-    <meta name="description" content="इलाज के खर्च में सहायता की जरूरत वाले मरीजों के लिए Blood Saathi का आवेदन फॉर्म।">
+
+    <meta name="description" content="इलाज के खर्च में सहायता की जरूरत वाले मरीजों के लिए Blood Saathi की जानकारी और शुरुआती फॉर्म।">
+
     <meta name="theme-color" content="#b91c1c">
 
     <style>
@@ -18,7 +20,7 @@
             font-family: Arial, "Noto Sans Devanagari", sans-serif;
             background: #fff7f7;
             color: #222;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         header {
@@ -70,7 +72,7 @@
         }
 
         .intro {
-            margin: 0 0 22px;
+            margin: 0 0 20px;
             color: #555;
             font-size: 14px;
         }
@@ -132,7 +134,7 @@
         .consent input {
             width: 19px;
             height: 19px;
-            margin-top: 2px;
+            margin-top: 4px;
             flex-shrink: 0;
         }
 
@@ -153,13 +155,22 @@
         }
 
         .notice {
-            margin-top: 18px;
-            padding: 14px;
+            margin: 18px 0;
+            padding: 15px;
             border-radius: 9px;
             background: #fff7ed;
             border: 1px solid #fed7aa;
             color: #7c2d12;
             font-size: 13px;
+        }
+
+        .notice ul {
+            padding-left: 21px;
+            margin-bottom: 0;
+        }
+
+        .notice li {
+            margin-bottom: 8px;
         }
 
         .message {
@@ -196,23 +207,72 @@
     </header>
 
     <main>
+
         <a class="home-link" href="index.html">
             🏠 होम पेज पर जाएँ
         </a>
 
         <section class="card">
+
             <h2>🤝 मरीज की आर्थिक सहायता</h2>
 
             <p class="intro">
-                यदि किसी मरीज को इलाज के खर्च में सहायता की जरूरत है,
-                तो नीचे फॉर्म की जानकारी भरें। फिलहाल यह फॉर्म
-                सर्वर पर आवेदन जमा नहीं करता।
+                Blood Saathi का उद्देश्य आर्थिक रूप से कमजोर मरीजों
+                और उनकी सहायता करना चाहने वाले लोगों के बीच संपर्क
+                का रास्ता बनाने का प्रयास करना है।
+            </p>
+
+            <div class="notice" role="note">
+
+                <strong>
+                    🤝 आर्थिक सहायता के बारे में जरूरी जानकारी:
+                </strong>
+
+                <ul>
+                    <li>
+                        Blood Saathi कोई सरकारी योजना नहीं है और
+                        किसी सरकारी विभाग की ओर से संचालित नहीं है।
+                    </li>
+
+                    <li>
+                        फिलहाल Blood Saathi की ओर से आर्थिक सहायता
+                        देने का कोई निश्चित फंड उपलब्ध नहीं है।
+                    </li>
+
+                    <li>
+                        आवेदन जमा करने से आर्थिक सहायता मिलने की
+                        गारंटी नहीं है।
+                    </li>
+
+                    <li>
+                        भविष्य में आवेदन की जाँच के बाद, व्यवस्था
+                        उपलब्ध होने पर, सहायता के इच्छुक दानदाताओं,
+                        सामाजिक संस्थाओं या अन्य विश्वसनीय सहायता
+                        स्रोतों से संपर्क कराने का प्रयास किया जा सकता है।
+                    </li>
+
+                    <li>
+                        मरीज या उसके परिवार की जानकारी उनकी स्पष्ट
+                        सहमति के बिना सार्वजनिक नहीं की जाएगी।
+                    </li>
+                </ul>
+
+            </div>
+
+            <p class="intro">
+                नीचे दिया गया फॉर्म अभी केवल शुरुआती जाँच के लिए है।
+                यह आवेदन को सर्वर पर सेव नहीं करता और किसी व्यक्ति
+                या संस्था को नहीं भेजता।
             </p>
 
             <form id="helpForm">
 
                 <div class="field">
-                    <label for="patientName">मरीज का नाम *</label>
+
+                    <label for="patientName">
+                        मरीज का नाम *
+                    </label>
+
                     <input
                         type="text"
                         id="patientName"
@@ -221,13 +281,19 @@
                         maxlength="100"
                         required
                         placeholder="मरीज का नाम लिखें">
+
                 </div>
 
                 <div class="field">
-                    <label for="state">राज्य या केंद्र शासित प्रदेश *</label>
+
+                    <label for="state">
+                        राज्य या केंद्र शासित प्रदेश *
+                    </label>
 
                     <select id="state" name="state" required>
+
                         <option value="">अपना राज्य चुनें</option>
+
                         <option>Andhra Pradesh</option>
                         <option>Arunachal Pradesh</option>
                         <option>Assam</option>
@@ -264,11 +330,17 @@
                         <option>Ladakh</option>
                         <option>Lakshadweep</option>
                         <option>Puducherry</option>
+
                     </select>
+
                 </div>
 
                 <div class="field">
-                    <label for="city">शहर या जिला *</label>
+
+                    <label for="city">
+                        शहर या जिला *
+                    </label>
+
                     <input
                         type="text"
                         id="city"
@@ -277,10 +349,15 @@
                         maxlength="100"
                         required
                         placeholder="शहर या जिले का नाम">
+
                 </div>
 
                 <div class="field">
-                    <label for="hospital">अस्पताल का नाम *</label>
+
+                    <label for="hospital">
+                        अस्पताल का नाम *
+                    </label>
+
                     <input
                         type="text"
                         id="hospital"
@@ -289,23 +366,50 @@
                         maxlength="150"
                         required
                         placeholder="जहाँ इलाज चल रहा है">
+
                 </div>
 
                 <div class="field">
-                    <label for="helpType">किस तरह की सहायता चाहिए? *</label>
+
+                    <label for="helpType">
+                        किस तरह की सहायता चाहिए? *
+                    </label>
 
                     <select id="helpType" name="helpType" required>
-                        <option value="">सहायता का प्रकार चुनें</option>
-                        <option value="treatment">इलाज का खर्च</option>
-                        <option value="medicine">दवाइयों का खर्च</option>
-                        <option value="blood">रक्त या उससे संबंधित खर्च</option>
-                        <option value="tests">जाँच और मेडिकल टेस्ट</option>
-                        <option value="other">अन्य जरूरी सहायता</option>
+
+                        <option value="">
+                            सहायता का प्रकार चुनें
+                        </option>
+
+                        <option value="treatment">
+                            इलाज का खर्च
+                        </option>
+
+                        <option value="medicine">
+                            दवाइयों का खर्च
+                        </option>
+
+                        <option value="blood">
+                            रक्त या उससे संबंधित खर्च
+                        </option>
+
+                        <option value="tests">
+                            जाँच और मेडिकल टेस्ट
+                        </option>
+
+                        <option value="other">
+                            अन्य जरूरी सहायता
+                        </option>
+
                     </select>
+
                 </div>
 
                 <div class="field">
-                    <label for="amount">अनुमानित सहायता राशि (₹) *</label>
+
+                    <label for="amount">
+                        अनुमानित सहायता राशि (₹) *
+                    </label>
 
                     <input
                         type="number"
@@ -319,13 +423,16 @@
                         placeholder="जैसे: 10000">
 
                     <span class="hint">
-                        अनुमानित राशि लिखें। यह सहायता मिलने का
-                        वादा नहीं है।
+                        अनुमानित राशि लिखें। यह सहायता मिलने का वादा नहीं है।
                     </span>
+
                 </div>
 
                 <div class="field">
-                    <label for="details">स्थिति का संक्षिप्त विवरण *</label>
+
+                    <label for="details">
+                        स्थिति का संक्षिप्त विवरण *
+                    </label>
 
                     <textarea
                         id="details"
@@ -334,10 +441,14 @@
                         maxlength="1000"
                         required
                         placeholder="मरीज की जरूरत और अनुमानित खर्च के बारे में बताएं। आधार नंबर, बैंक विवरण या संवेदनशील मेडिकल रिपोर्ट न लिखें।"></textarea>
+
                 </div>
 
                 <div class="field">
-                    <label for="contactName">संपर्क करने वाले का नाम *</label>
+
+                    <label for="contactName">
+                        संपर्क करने वाले का नाम *
+                    </label>
 
                     <input
                         type="text"
@@ -348,10 +459,14 @@
                         autocomplete="name"
                         required
                         placeholder="मरीज या परिजन का नाम">
+
                 </div>
 
                 <div class="field">
-                    <label for="phone">संपर्क मोबाइल नंबर *</label>
+
+                    <label for="phone">
+                        संपर्क मोबाइल नंबर *
+                    </label>
 
                     <input
                         type="tel"
@@ -368,9 +483,11 @@
                     <span class="hint">
                         भारत का 10 अंकों वाला मोबाइल नंबर लिखें।
                     </span>
+
                 </div>
 
                 <label class="consent" for="consent">
+
                     <input
                         type="checkbox"
                         id="consent"
@@ -378,12 +495,22 @@
                         required>
 
                     <span>
-                        मैं सहमति देता/देती हूँ कि मेरी दी गई जानकारी
-                        का उपयोग सहायता आवेदन से संबंधित संपर्क के
-                        लिए किया जा सकता है। मैं समझता/समझती हूँ
-                        कि यह फॉर्म अभी जानकारी सेव नहीं करता और
-                        आर्थिक सहायता की गारंटी नहीं है।
+                        मैं पुष्टि करता/करती हूँ कि मैंने ऊपर दी गई
+                        जानकारी पढ़ ली है। मैं समझता/समझती हूँ कि
+                        Blood Saathi कोई सरकारी योजना नहीं है,
+                        फिलहाल इसका कोई निश्चित सहायता फंड उपलब्ध
+                        नहीं है और आवेदन करने से आर्थिक सहायता
+                        मिलने की गारंटी नहीं है।
+
+                        यह शुरुआती फॉर्म अभी मेरी जानकारी सेव या
+                        किसी संस्था को नहीं भेजता।
+
+                        भविष्य में वास्तविक आवेदन व्यवस्था शुरू होने
+                        पर मेरी अलग स्पष्ट सहमति के बिना मेरी निजी
+                        जानकारी संभावित दानदाताओं या सहायता संस्थाओं
+                        के साथ साझा नहीं की जाएगी।
                     </span>
+
                 </label>
 
                 <button type="submit">
@@ -400,15 +527,31 @@
             </form>
 
             <div class="notice">
+
                 <strong>🔒 निजता और जरूरी सूचना:</strong>
-                यह शुरुआती फॉर्म है। आवेदन अभी सर्वर पर सेव या
-                किसी संस्था को भेजा नहीं जाता। कृपया अभी वास्तविक
-                मरीजों की निजी जानकारी जमा न करें। आधार नंबर,
-                बैंक खाता, पासवर्ड या संवेदनशील मेडिकल दस्तावेज
-                यहाँ न लिखें। भविष्य में आवेदन की जाँच और सहायता
-                व्यवस्था तैयार होने के बाद ही वास्तविक आवेदन लिए जाएँगे।
+
+                <p>
+                    यह वेबसाइट अभी निर्माण के शुरुआती चरण में है।
+                    फॉर्म की जाँच होने पर भी आवेदन सेव नहीं होता
+                    और किसी व्यक्ति या संस्था को नहीं भेजा जाता।
+                </p>
+
+                <p>
+                    इसलिए फिलहाल वास्तविक मरीजों की निजी जानकारी
+                    जमा न करें। आधार नंबर, बैंक खाता, पासवर्ड या
+                    संवेदनशील मेडिकल दस्तावेज यहाँ न लिखें।
+                </p>
+
+                <p>
+                    वास्तविक आवेदन तभी लिए जाएँगे जब सुरक्षित
+                    व्यवस्था, जाँच की प्रक्रिया और सहायता से जुड़ी
+                    स्पष्ट जानकारी तैयार होगी।
+                </p>
+
             </div>
+
         </section>
+
     </main>
 
     <footer>
@@ -424,6 +567,7 @@
         const formMessage = document.getElementById("formMessage");
 
         helpForm.addEventListener("submit", function(event) {
+
             event.preventDefault();
 
             if (!helpForm.checkValidity()) {
@@ -436,13 +580,17 @@
             );
 
             if (!Number.isFinite(amount) || amount <= 0) {
+
                 formMessage.style.display = "block";
+
                 formMessage.textContent =
                     "कृपया सहायता राशि सही तरीके से दर्ज करें।";
+
                 return;
             }
 
             formMessage.style.display = "block";
+
             formMessage.textContent =
                 "फॉर्म की जाँच सफल रही, लेकिन डेटाबेस अभी जुड़ा नहीं है। आपका आवेदन सेव या किसी संस्था को भेजा नहीं गया है। यह फॉर्म आर्थिक सहायता मिलने की गारंटी नहीं देता।";
 
@@ -450,8 +598,9 @@
                 behavior: "smooth",
                 block: "nearest"
             });
+
         });
     </script>
 
 </body>
-</html>
+        </html>
